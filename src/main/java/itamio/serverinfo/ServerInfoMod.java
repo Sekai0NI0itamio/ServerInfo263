@@ -18,7 +18,7 @@ public class ServerInfoMod {
         event.getDispatcher().register(Commands.literal("serverinfo").requires(s -> s.hasPermission(0))
             .executes(ctx -> {
                 var s = ctx.getSource().getServer();
-                ctx.getSource().sendSuccess(() -> Component.literal("Server: " + s.getServerName() + " | Players: " + s.getPlayerList().getPlayerCount() + " | Seed: " + ctx.getSource().getLevel().getSeed()), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("Players online: " + s.getPlayerList().getPlayerCount() + ", max: " + s.getMaxPlayers() + ", seed: " + ctx.getSource().getLevel().getSeed()), false);
                 return 1;
             }));
     }
